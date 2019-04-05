@@ -1,0 +1,23 @@
+{
+  "name": "examples-parser",
+  "version": "1.0.0",
+  "description": "Parses files for examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloewen8/examples-parser.git"
+  },
+  "keywords": [
+    "markdown",
+    "parser"
+  ],
+  "author": "cloewen8",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/cloewen8/examples-parser/issues"
+  },
+  "homepage": "https://github.com/cloewen8/examples-parser#readme"
+}
