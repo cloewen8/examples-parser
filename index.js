@@ -10,31 +10,38 @@ const { EventEmitter } = require('events');
  * May optionally include glob options.
  */
 
+/**
+ * Parses globs for examples.
+ */
 class Parser extends EventEmitter {
+	/**
+	 * Creates a new parser.
+	 *
+	 * @param {string[]} patterns
+	 * @param {ParserOptions} options
+	 */
 	constructor(patterns, options) {
 		options = options || {};
 		super();
+		let processing = [];
 		// Parse each pattern.
 		for (let pattern of patterns) {
-			let matcher = new Glob(pattern, options);
-			// let examples = [];
-			matcher.on('match', (file) => {
-				// todo: Parse file for examples.
-				// Save example to array.
-				// Emit example.
-				// Parse file examples.
-				console.log(file);
-			});
-			matcher.on('error', (err) => {
-				// todo: Emit error.
-				console.log(err);
-			});
-			matcher.on('end', () => {
-				matcher.removeAllListeners();
-				console.log('done');
-				// todo: Emit done.
-			});
+			processing.push(new Promise((resolve) => {
+				let matcher = new Glob(pattern, options);
+				matcher.on('match', (file) => {
+					// todo: Parse file for examples.
+					this.emit('example', null);
+				});
+				matcher.on('error', (err) => {
+					this.emit('error', err);
+				});
+				matcher.on('end', () => {
+					matcher.removeAllListeners();
+					resolve();
+				});
+			}));
 		}
+		Promise.all(processing).then(() => this.emit('end'));
 	}
 }
 

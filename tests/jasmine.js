@@ -49,7 +49,7 @@ function getRandString(min = 1, max = 1, range = ' ~') {
 	return String.fromCodePoint(...points);
 }
 
-module.exports = jasmine
+module.exports = jasmine;
 module.exports.getRandFloat = getRandFloat;
 module.exports.getRandInt = getRandInt;
 module.exports.getRandString = getRandString;
