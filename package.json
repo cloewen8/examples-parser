@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/cloewen8/examples-parser#readme",
   "dependencies": {
-    "glob": "^7.1.3"
+    "glob": "~7.1.6"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-plugin-jsdoc": "^4.8.0",
-    "eslint-plugin-json": "^1.4.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "jasmine": "^3.4.0"
+    "eslint": "~7.4.0",
+    "eslint-plugin-jsdoc": "~30.0.3",
+    "eslint-plugin-json": "~2.1.1",
+    "eslint-plugin-promise": "~4.2.1",
+    "jasmine": "~3.5.0"
   }
 }

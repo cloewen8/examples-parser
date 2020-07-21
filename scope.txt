@@ -1,0 +1,8 @@
+In scope:
+Processing metadata.
+Gathering example code.
+Gathering example output.
+
+Out of scope:
+Integration testing.
+Documentation generation.
